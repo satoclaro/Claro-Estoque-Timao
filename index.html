@@ -49,10 +49,11 @@
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.65);
         }
         .header-title img {
-            height: 52px;
-            width: 52px;
+            height: 54px;
+            width: 54px;
             object-fit: contain;
-            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.8));
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.85));
+            flex-shrink: 0;
         }
         .header-title-text {
             display: flex;
@@ -74,6 +75,17 @@
             letter-spacing: 1px;
             margin-top: 2px;
             text-transform: uppercase;
+        }
+        .offline-badge {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 10px;
+            color: #ffffff;
+            background: #22222a;
+            border: 1px solid #4e4e5e;
+            padding: 2px 7px;
+            border-radius: 4px;
+            width: fit-content;
         }
         .card {
             background: var(--card-bg);
@@ -181,8 +193,7 @@
             border-radius: 4px;
             font-weight: bold;
         }
-        
-        /* Câmera com mira de precisão e toque para focar */
+
         #reader-container { display: none; margin-top: 10px; text-align: center; }
         .camera-wrapper {
             position: relative;
@@ -199,7 +210,7 @@
         #reader { width: 100%; height: 100%; }
         #reader video { width: 100% !important; height: 100% !important; object-fit: cover; }
         #reader__scan_region img, #reader__dashboard { display: none !important; }
-        
+
         .mira-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -253,7 +264,7 @@
             text-transform: none;
         }
         #scanner-status { font-size: 12px; color: #e4e4ec; font-weight: bold; margin-top: 6px; min-height: 16px; }
-        
+
         .search-box { margin-top: 10px; margin-bottom: 10px; }
         .search-box input { font-size: 14px; padding: 10px 12px; background: var(--input-bg); color: var(--text-main); }
         .table-container { overflow-x: auto; margin-top: 10px; max-height: 300px; overflow-y: auto; }
@@ -302,10 +313,13 @@
 <body>
 
     <div class="header-title">
-        <img id="logo-timao" width="52" height="52" style="display:block;min-width:52px;min-height:52px;" alt="Escudo S.C. Corinthians Paulista">
+        <img id="logo-timao"
+             src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cg transform='translate(120,126)'%3E%3Cg transform='rotate(-45)'%3E%3Crect x='-5' y='-102' width='10' height='204' rx='3' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Cpolygon points='-15,-108 15,-108 18,-68 6,-54 -6,-54 -18,-68' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Cline x1='0' y1='-100' x2='0' y2='-62' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/g%3E%3Cg transform='rotate(45)'%3E%3Crect x='-5' y='-102' width='10' height='204' rx='3' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Cpolygon points='-15,-108 15,-108 18,-68 6,-54 -6,-54 -18,-68' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Cline x1='0' y1='-100' x2='0' y2='-62' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/g%3E%3Ccircle cx='0' cy='-104' r='15' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Ccircle cx='0' cy='-104' r='7' fill='%23121216' stroke='%23e5e5ec' stroke-width='2'/%3E%3Crect x='-24' y='-88' width='48' height='12' rx='4' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Crect x='-7' y='-76' width='14' height='166' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Cpath d='M-74,48 Q-52,92 0,98 Q52,92 74,48 L60,42 Q40,76 0,82 Q-40,76 -60,42 Z' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Cpolygon points='-82,34 -54,42 -76,62' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Cpolygon points='82,34 54,42 76,62' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Cpolygon points='-10,94 10,94 0,108' fill='%23c8102e' stroke='%23e5e5ec' stroke-width='2.5'/%3E%3Ccircle cx='0' cy='0' r='66' fill='%23e5e5ec' stroke='%23111115' stroke-width='2.5'/%3E%3Ccircle cx='0' cy='0' r='60' fill='%230d0d10'/%3E%3Ccircle cx='0' cy='0' r='41' fill='%23ffffff' stroke='%23c8c8d2' stroke-width='2'/%3E%3Cdefs%3E%3Cpath id='arcTop' d='M -49,8 A 50,50 0 1,1 49,8'/%3E%3C/defs%3E%3Ctext fill='%23ffffff' font-family='Arial, sans-serif' font-size='9.5' font-weight='bold' letter-spacing='0.8'%3E%3CtextPath href='%23arcTop' startOffset='50%25' text-anchor='middle'%3ES.C. CORINTHIANS PAULISTA%3C/textPath%3E%3C/text%3E%3Ctext x='0' y='54' fill='%23ffffff' font-family='Arial, sans-serif' font-size='10.5' font-weight='bold' text-anchor='middle'%3E%E2%98%85 1910 %E2%98%85%3C/text%3E%3Cline x1='-21' y1='-24' x2='-11' y2='30' stroke='%23111115' stroke-width='3'/%3E%3Cg transform='translate(-19,-21)'%3E%3Crect x='0' y='0' width='44' height='32' fill='%23ffffff' stroke='%23111115' stroke-width='1.5'/%3E%3Crect x='0' y='0' width='44' height='3.5' fill='%230d0d10'/%3E%3Crect x='0' y='7' width='44' height='3.5' fill='%230d0d10'/%3E%3Crect x='0' y='14' width='44' height='3.5' fill='%230d0d10'/%3E%3Crect x='0' y='21' width='44' height='3.5' fill='%230d0d10'/%3E%3Crect x='0' y='28.5' width='44' height='3.5' fill='%230d0d10'/%3E%3Crect x='0' y='0' width='19' height='15' fill='%23c8102e'/%3E%3Ccircle cx='9.5' cy='7.5' r='5' fill='%23ffffff'/%3E%3Ccircle cx='9.5' cy='7.5' r='2.8' fill='%230d0d10'/%3E%3C/g%3E%3Crect x='-8' y='-64' width='3.5' height='14' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='-1.8' y='-64' width='3.5' height='14' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='4.5' y='-64' width='3.5' height='14' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='-8' y='50' width='3.5' height='14' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='-1.8' y='50' width='3.5' height='14' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='4.5' y='50' width='3.5' height='14' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='-64' y='-8' width='14' height='3.5' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='-64' y='-1.8' width='14' height='3.5' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='-64' y='4.5' width='14' height='3.5' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='50' y='-8' width='14' height='3.5' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='50' y='-1.8' width='14' height='3.5' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3Crect x='50' y='4.5' width='14' height='3.5' rx='1.5' fill='%23e5e5ec' stroke='%23111115' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E"
+             width="54" height="54" alt="Escudo S.C. Corinthians Paulista">
         <div class="header-title-text">
             <h2>Controle de Equipamentos Diário</h2>
             <span class="header-subtitle">S.C. Corinthians Paulista • 1910</span>
+            <span id="status-conexao" class="offline-badge">● Modo Local / Offline Ativo</span>
         </div>
     </div>
 
@@ -360,7 +374,7 @@
 
         <div class="search-box">
             <label for="busca">🔍 Procurar por MAC, CA ID, Contrato ou Dia</label>
-            <input type="text" id="busca" placeholder="Ex: A4B1C2, 241809, 001234 ou 20/11/2026..." oninput="atualizarTabela()">
+            <input type="text" id="busca" placeholder="Ex: A4B1C2, 241809, 001234 ou 24/11/2026..." oninput="atualizarTabela()">
         </div>
 
         <div class="export-buttons">
@@ -388,9 +402,26 @@
         </div>
     </div>
 
-    <footer class="footer-info" id="rodape-versao">Criado por: Fernando Sato - Versão 30.2 (Edição Timão) - 24/11/2026 21:50</footer>
+    <footer class="footer-info" id="rodape-versao">Criado por: Fernando Sato - Versão 30.3 (Edição Timão Offline) - 24/11/2026 22:00</footer>
 
 <script>
+    function atualizarStatusConexao() {
+        const el = document.getElementById('status-conexao');
+        if (!el) return;
+        if (navigator.onLine) {
+            el.textContent = '● Online • Salvamento Local Ativo';
+            el.style.borderColor = '#4e4e5e';
+            el.style.color = '#d8d8e2';
+        } else {
+            el.textContent = '⚡ Offline • Dados salvos localmente';
+            el.style.borderColor = '#c8102e';
+            el.style.color = '#ffffff';
+        }
+    }
+    window.addEventListener('online', atualizarStatusConexao);
+    window.addEventListener('offline', atualizarStatusConexao);
+    atualizarStatusConexao();
+
     function gerarEscudoCorinthiansDataURL() {
         const canvas = document.createElement('canvas');
         canvas.width = 240;
@@ -619,15 +650,6 @@
     }
 
     const ESCUDO_TIMAO_SRC = gerarEscudoCorinthiansDataURL();
-    function aplicarEscudoNoDOM() {
-        const img = document.getElementById('logo-timao');
-        if (img) {
-            img.src = ESCUDO_TIMAO_SRC;
-            img.style.display = 'block';
-        }
-    }
-    aplicarEscudoNoDOM();
-    document.addEventListener('DOMContentLoaded', aplicarEscudoNoDOM);
 
     let dados = JSON.parse(localStorage.getItem('claro_equipamentos_v1') || '[]');
     let html5QrCode = null;
@@ -635,8 +657,8 @@
     let flashAtivo = false;
     let videoTrackAtual = null;
 
-    const VERSAO_APP = "30.2";
-    const DATA_REVISAO_APP = "24/11/2026 21:50";
+    const VERSAO_APP = "30.3";
+    const DATA_REVISAO_APP = "24/11/2026 22:00";
     atualizarTabela();
 
     function obterDataAtual() {
@@ -850,15 +872,14 @@
         const bruto = textoLido.toUpperCase();
         const tipoAtual = document.getElementById('tipo') ? document.getElementById('tipo').value : '';
 
-        const regexBloqueio = /(BOX\s*S\/?N|BOX\s*SN|S\/?N|SERIAL|EAN|WIFI|2\.4\s*GHZ|5\.0\s*GHZ|2G|5G|EMTA\s*MAC|MOCA\s*MAC|MOCA|MAC\s*ETHERNET|ETHERNET|ETH\s*MAC|CM\s*MAC\s*ADDRESS|ADDRESS|IP|SENHA|USU[AÁ]RIO|FABR|NETWORK\s*NAME)/i;
+        const regexBloqueio = /(BOX\s*S\/?N|BOX\s*SN| S\/?N |SERIAL| EAN |WIFI|2\.4\s*GHZ|5\.0\s*GHZ| 2G | 5G |EMTA\s*MAC|MOCA\s*MAC|MOCA|MAC\s*ETHERNET|ETHERNET|ETH\s*MAC|CM\s*MAC\s*ADDRESS|ADDRESS| IP |SENHA|USU[AÁ]RIO|FABR|NETWORK\s*NAME)/i;
 
-        const linhas = bruto.split(/
-?
+        const linhas = bruto.split(/?
 /).map(l => l.trim()).filter(Boolean);
 
         for (const linha of linhas) {
             if (regexBloqueio.test(linha)) continue;
-            const matchCaId = linha.match(/(?:^|)(?:CA\s*I?D|CAID)\s*[:\-]?\s*([0-9\s]{10,16})$/i);
+            const matchCaId = linha.match(/(?:^| )(?:CA\s*I?D|CAID)\s*[:\-]?\s*([0-9\s]{10,16})$/i);
             if (matchCaId && matchCaId[1]) {
                 const digitosCaId = matchCaId[1].replace(/\D/g, '');
                 if (digitosCaId.length >= 10 && digitosCaId.length <= 14) {
@@ -870,7 +891,7 @@
 
         for (const linha of linhas) {
             if (regexBloqueio.test(linha)) continue;
-            const ehCmMac = /(?:^|)CM\s*MAC\s*[:\-]?\s*([0-9A-F]{2}(?:[:\-]?[0-9A-F]{2}){5})$/i.exec(linha);
+            const ehCmMac = /(?:^| )CM\s*MAC\s*[:\-]?\s*([0-9A-F]{2}(?:[:\-]?[0-9A-F]{2}){5})$/i.exec(linha);
             if (ehCmMac && ehCmMac[1]) {
                 const macLimpo = ehCmMac[1].replace(/[:\-]/g, '');
                 if (macLimpo.length === 12) {
@@ -878,7 +899,7 @@
                 }
             }
 
-            const ehMacPuro = /(?:^|)MAC\s*[:\-]?\s*([0-9A-F]{2}(?:[:\-]?[0-9A-F]{2}){5})$/i.exec(linha);
+            const ehMacPuro = /(?:^| )MAC\s*[:\-]?\s*([0-9A-F]{2}(?:[:\-]?[0-9A-F]{2}){5})$/i.exec(linha);
             if (ehMacPuro && ehMacPuro[1]) {
                 const macLimpo = ehMacPuro[1].replace(/[:\-]/g, '');
                 if (macLimpo.length === 12) {
@@ -1127,8 +1148,7 @@
                         if (!cameraAtiva) break;
                         const cRot = ang === 0 ? canvasBase : criarCanvasRotacionado(canvasBase, ang);
                         const { data: { text } } = await ocrWorker.recognize(cRot);
-                        const linhas = (text || '').toUpperCase().split(/
-?
+                        const linhas = (text || '').toUpperCase().split(/?
 /).map(l => l.trim()).filter(Boolean);
                         for (const linha of linhas) {
                             const aposDoisPontos = linha.includes(':') ? linha.split(':').slice(1).join(':').trim() : linha;
@@ -1247,6 +1267,10 @@
         const statusDiv = document.getElementById('scanner-status');
 
         if (!cameraAtiva) {
+            if (!window.Html5Qrcode) {
+                alert("Leitor de câmera indisponível offline sem cache prévio. Digite o código manualmente no campo MAC / CA ID.");
+                return;
+            }
             container.style.display = 'block';
             flashAtivo = false;
             videoTrackAtual = null;
@@ -1484,7 +1508,10 @@
                 }
 
                 const substituir = dados.length > 0
-                    ? confirm(`Encontrados ${registrosValidos.length} registro(s) no JSON.\n\nClique em OK para MESCLAR com os ${dados.length} registros atuais (sem duplicar).\nClique em CANCELAR para SUBSTITUIR toda a lista atual.`)
+                    ? confirm(`Encontrados ${registrosValidos.length} registro(s) no JSON.
+
+Clique em OK para MESCLAR com os ${dados.length} registros atuais (sem duplicar).
+Clique em CANCELAR para SUBSTITUIR toda a lista atual.`)
                     : true;
 
                 const normalizados = registrosValidos.map((item, idx) => ({
@@ -1532,12 +1559,14 @@
             alert("Não há dados cadastrados para exportar.");
             return;
         }
-        let csvContent = "data:text/csv;charset=utf-8,\uFEFFData_Hora;Contrato;Status;Tipo;MAC_CAID;Data_Entrega_Reversa\n";
+        let csvContent = "data:text/csv;charset=utf-8,﻿Data_Hora;Contrato;Status;Tipo;MAC_CAID;Data_Entrega_Reversa
+";
         listaExportar.forEach(item => {
             const mov = item.movimentacao || 'Cliente';
             const dataExibicao = item.data || '-';
             const dataEntrega = item.dataEntrega || '-';
-            csvContent += `${dataExibicao};${item.contrato};${mov};${item.tipo};${item.mac};${dataEntrega}\n`;
+            csvContent += `${dataExibicao};${item.contrato};${mov};${item.tipo};${item.mac};${dataEntrega}
+`;
         });
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
@@ -1556,7 +1585,7 @@
         }
 
         if (!window.jspdf) {
-            alert("Biblioteca PDF ainda carregando ou sem conexão com a internet.");
+            alert("Biblioteca PDF indisponível offline sem cache prévio.");
             return;
         }
 
