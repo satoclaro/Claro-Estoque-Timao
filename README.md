@@ -4,7 +4,7 @@ Aplicação web mobile em arquivo único (`index.html`) com identidade visual te
 
 ## Funcionalidades
 
-- **Tema Alvinegro:** Interface escura em preto e branco com listras verticais discretas, destaques em vermelho e brasão do Corinthians renderizado em alta definição via `<canvas>` (exibido no cabeçalho e incorporado ao relatório em PDF).
+- **Tema Alvinegro:** Interface escura em preto e branco com listras verticais discretas, destaques em vermelho e símbolo do Corinthians renderizado no cabeçalho e incorporado ao relatório em PDF.
 - **Registro de Equipamentos:** Cadastro por **Número do Contrato / OS** (com colagem automática a partir da área de transferência ao focar/clicar no campo), **Destino / Movimentação** (`Cliente` ou `Reversa`), **Tipo de Equipamento** (`ONT`, `EMTA`, `DECODER`, `SMARTCARD`, `CHIP`, `MESH`) e **MAC / CA ID / Serial**.
 - **Leitura por Câmera com Mira:**
   - Suporte a códigos de barras (`Code 128`, `Code 39`, `Code 93`, `ITF`, `Codabar`) via `html5-qrcode` e `BarcodeDetector`, além de leitura de rótulos via `Tesseract.js` (OCR).
@@ -24,5 +24,5 @@ Aplicação web mobile em arquivo único (`index.html`) com identidade visual te
 ## Autor e Versão
 
 - **Criado por:** Fernando Sato
-- **Versão:** 30.0 (Edição Timão)
-- **Data de revisão:** 24/11/2026 21:30
+- **Versão:** 30.2 (Edição Timão)
+- **Data de revisão:** 24/11/2026 21:50

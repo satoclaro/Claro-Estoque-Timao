@@ -302,7 +302,7 @@
 <body>
 
     <div class="header-title">
-        <img id="logo-timao" alt="Escudo S.C. Corinthians Paulista">
+        <img id="logo-timao" width="52" height="52" style="display:block;min-width:52px;min-height:52px;" alt="Escudo S.C. Corinthians Paulista">
         <div class="header-title-text">
             <h2>Controle de Equipamentos Diário</h2>
             <span class="header-subtitle">S.C. Corinthians Paulista • 1910</span>
@@ -388,7 +388,7 @@
         </div>
     </div>
 
-    <footer class="footer-info" id="rodape-versao">Criado por: Fernando Sato - Versão 30.0 (Edição Timão) - 24/11/2026 21:30</footer>
+    <footer class="footer-info" id="rodape-versao">Criado por: Fernando Sato - Versão 30.2 (Edição Timão) - 24/11/2026 21:50</footer>
 
 <script>
     function gerarEscudoCorinthiansDataURL() {
@@ -619,7 +619,15 @@
     }
 
     const ESCUDO_TIMAO_SRC = gerarEscudoCorinthiansDataURL();
-    document.getElementById('logo-timao').src = ESCUDO_TIMAO_SRC;
+    function aplicarEscudoNoDOM() {
+        const img = document.getElementById('logo-timao');
+        if (img) {
+            img.src = ESCUDO_TIMAO_SRC;
+            img.style.display = 'block';
+        }
+    }
+    aplicarEscudoNoDOM();
+    document.addEventListener('DOMContentLoaded', aplicarEscudoNoDOM);
 
     let dados = JSON.parse(localStorage.getItem('claro_equipamentos_v1') || '[]');
     let html5QrCode = null;
@@ -627,8 +635,8 @@
     let flashAtivo = false;
     let videoTrackAtual = null;
 
-    const VERSAO_APP = "30.0";
-    const DATA_REVISAO_APP = "24/11/2026 21:30";
+    const VERSAO_APP = "30.2";
+    const DATA_REVISAO_APP = "24/11/2026 21:50";
     atualizarTabela();
 
     function obterDataAtual() {
@@ -844,7 +852,8 @@
 
         const regexBloqueio = /(BOX\s*S\/?N|BOX\s*SN|S\/?N|SERIAL|EAN|WIFI|2\.4\s*GHZ|5\.0\s*GHZ|2G|5G|EMTA\s*MAC|MOCA\s*MAC|MOCA|MAC\s*ETHERNET|ETHERNET|ETH\s*MAC|CM\s*MAC\s*ADDRESS|ADDRESS|IP|SENHA|USU[AÁ]RIO|FABR|NETWORK\s*NAME)/i;
 
-        const linhas = bruto.split(/?
+        const linhas = bruto.split(/
+?
 /).map(l => l.trim()).filter(Boolean);
 
         for (const linha of linhas) {
@@ -1118,7 +1127,8 @@
                         if (!cameraAtiva) break;
                         const cRot = ang === 0 ? canvasBase : criarCanvasRotacionado(canvasBase, ang);
                         const { data: { text } } = await ocrWorker.recognize(cRot);
-                        const linhas = (text || '').toUpperCase().split(/?
+                        const linhas = (text || '').toUpperCase().split(/
+?
 /).map(l => l.trim()).filter(Boolean);
                         for (const linha of linhas) {
                             const aposDoisPontos = linha.includes(':') ? linha.split(':').slice(1).join(':').trim() : linha;
